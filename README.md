@@ -19,7 +19,7 @@ classlarına ulaşıyorum, başlatıyorum, bekletiyorum.
 
 
 
-####ROADMAP
+####  ROADMAP
 
  - Object içeren listeden kurtularak cast işlemlerini azaltabiliriz.
  - Error handling işlemleri eklenmeli.
