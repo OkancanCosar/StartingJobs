@@ -19,7 +19,7 @@ classlarına ulaşıyorum, başlatıyorum, bekletiyorum.
 
 
 
-####  ROADMAP
+#### ROADMAP
 
  - Object içeren listeden kurtularak cast işlemlerini azaltabiliriz.
  - Error handling işlemleri eklenmeli.
@@ -27,3 +27,11 @@ classlarına ulaşıyorum, başlatıyorum, bekletiyorum.
  - Önceliği yüksek işler için (Lisanslama  vb.) yapılmazsa devam edilemesin gibi senaryolar.
  - Verilen x adet işin belirli işleri(örneğin a ve b sırasındaki işler) kendisinden sonraki iş ile birlikte 
  çalışsın gibi senaryolar eklenebilir.
+
+
+## v1.0.1 || March 11,2019
+```
+	Retrofit argesi eklendi.
+	XX.class.isInstance daha maliyetsizmiş. instanceof yerine kullanıldı.
+
+```

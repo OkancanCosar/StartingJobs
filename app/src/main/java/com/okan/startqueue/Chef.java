@@ -26,14 +26,14 @@ public class Chef implements Runnable {
                  *              MAKE IT BETTER
                  * TODO todo TODO todo TODO todo TODO todo TODO todo
                  */
-                if (mObject instanceof FirstJob) {
+                if (FirstJob.class.isInstance(mObject)) {
                     FirstJob firstJob = FirstJob.class.cast(mObject);
                     if (firstJob.isInQueue()) {
                         firstJob.runTheJob();
                     } else if (firstJob.isFinished()) {
                         mQueue.remove(mObject);
                     }
-                } else if (mObject instanceof SecondJob) {
+                } else if (SecondJob.class.isInstance(mObject)) {
                     SecondJob secondJob = SecondJob.class.cast(mObject);
                     if (secondJob.isInQueue()) {
                         secondJob.runTheJob();
