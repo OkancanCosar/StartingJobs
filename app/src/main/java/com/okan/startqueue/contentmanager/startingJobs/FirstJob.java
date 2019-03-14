@@ -1,16 +1,26 @@
-package com.okan.startqueue.Jobs;
+package com.okan.startqueue.contentmanager.startingJobs;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.okan.startqueue.JobModel;
+import com.okan.startqueue.contentmanager.ContentManager;
+import com.okan.startqueue.datalayer.entities.PostModel;
+import com.okan.startqueue.util.LLog;
+
+import java.io.IOException;
+import java.util.List;
+
+import retrofit2.Response;
 
 public class FirstJob extends AsyncTask<String, Void, String> implements JobModel.IJob {
 
     private static final String TAG = "üFirstJob";
     private JobModel.JobStatus jobStatus;
+    private ContentManager _contentManager;
 
-    public FirstJob() {
+    public FirstJob(ContentManager contentManager) {
+        this._contentManager = contentManager;
         setJobStatus(JobModel.JobStatus.INQUEUE);
     }
 
@@ -20,9 +30,12 @@ public class FirstJob extends AsyncTask<String, Void, String> implements JobMode
         setJobStatus(JobModel.JobStatus.DOINBACKGROUND);
 
         try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
+            Response<List<PostModel>> response = _contentManager.getPostsCall().execute();
 
+            _contentManager.savePosts(FirstJob.this, response.body());
+
+        } catch (IOException e) {
+            LLog.e(TAG, FirstJob.class.getEnclosingMethod().getName() + ":" + e.toString());
         }
 
         setJobStatus(JobModel.JobStatus.DOINBACKGROUND_END);
@@ -34,20 +47,6 @@ public class FirstJob extends AsyncTask<String, Void, String> implements JobMode
         //Log.d("ü", result);
 
         setJobStatus(JobModel.JobStatus.ONPOSTEXECUTE);
-
-        try {
-
-            Thread.sleep(1000);
-        } catch (Exception e) {
-
-        }
-        setJobStatus(JobModel.JobStatus.ONPOSTEXECUTE_END);
-        try {
-
-            Thread.sleep(3000);
-        } catch (Exception e) {
-
-        }
         setJobStatus(JobModel.JobStatus.FINISHED);
 
     }

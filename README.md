@@ -29,6 +29,14 @@ classlarına ulaşıyorum, başlatıyorum, bekletiyorum.
  çalışsın gibi senaryolar eklenebilir.
 
 
+## v1.0.2 || March 14,2019
+```
+    Katmanlı yapıya geçtik.
+    Yazılan örnek işler için bir amaç olarak dummy servisten alınan metni 
+        direk dbye yazmayı denedim. 
+    Katmanlı yapıya uygunluğu tam olmayabilir. retrofit ve room db ile haşır neşir olmaya devam
+```
+
 ## v1.0.1 || March 11,2019
 ```
 	Retrofit argesi eklendi.

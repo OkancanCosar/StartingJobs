@@ -9,7 +9,10 @@ public class JobModel {
         DOINBACKGROUND_END,
         ONPOSTEXECUTE,
         ONPOSTEXECUTE_END,
-        FINISHED
+        FINISHED,
+
+        START_DB_SAVE,
+        FINISH_DB_SAVE
     }
 
     public interface IJob {

@@ -11,4 +11,15 @@
         android:onClick="addSomeJobs"
         android:text="addSomeJobs" />
 
+
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="hh:mm"
+        android:format24Hour="kk:mm"
+        android:shadowColor="#7fffffff"
+        android:shadowRadius="3.0"
+        android:textSize="20sp" />
+
+
 </LinearLayout>
