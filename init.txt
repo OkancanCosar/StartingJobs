@@ -1,0 +1,47 @@
+public class OJob{
+  
+    public AsyncTask realJob;
+    public boolean isInQueue;
+    public boolean isFinished;
+    public JobModel.JobStatus stat;
+    
+    public OJob(AsynTask task){
+      this.realJob = task
+      this.isInQueue = false;
+      this.isFinished = false;
+    }
+    
+    public boolean runTheJob(){
+      this.realJob.execute();
+    }
+
+    public boolean isInQueue(){
+      return this.stat == JobModel.JobStatus.FINISHED;
+    }
+    public boolean isFinished() {
+      return this.stat == JobModel.JobStatus.FINISHED;
+    }
+    // setter and getter
+}
+
+
+
+=============================================================
+
+Chef.java
+
+if (!ContentManager._startingJobQueue.isEmpty()) {
+  
+  OJob mJob = ContentManager._startingJobQueue.get(0);
+  
+  if (mJob.isInQueue()) {
+      mJob.runTheJob();
+  } else if (mJob.isFinished()) {
+      ContentManager._startingJobQueue.remove(mJob);
+  }
+}
+
+
+
+
+
